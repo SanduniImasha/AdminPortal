@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "w5iefh7nom4a1yWkI1/Ebqg0YdDbjAnvFtmz9+bFG/IApz56rJPM1WkeEuk3dZwXc5DzW6Fbxd/6NEA38w0Nng==",
+  "success": true,
+  "projectFilePath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Infrastructure\\Admin.Portal.API.Infrastructure.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Admin\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

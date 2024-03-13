@@ -1,0 +1,198 @@
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.Development.json
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.json
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.exe
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.deps.json
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.runtimeconfig.json
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.pdb
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.AssemblyReference.cache
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfoInputs.cache
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfo.cs
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CoreCompileInputs.cache
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cs
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cache
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.build.json
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.development.json
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.Admin-Portal-API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.build.Admin-Portal-API.props
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Admin-Portal-API.props
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Admin-Portal-API.props
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.pack.json
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\scopedcss\bundle\Admin-Portal-API.styles.css
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CopyComplete
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.dll
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\refint\Admin-Portal-API.dll
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.pdb
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.genruntimeconfig.cache
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\ref\Admin-Portal-API.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+D:\Project\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+D:\Project\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.sourcelink.json
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.AssemblyReference.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.GeneratedMSBuildEditorConfig.editorconfig
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfoInputs.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfo.cs
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CoreCompileInputs.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cs
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\refint\Admin-Portal-API.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.pdb
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.Development.json
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.json
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.exe
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.deps.json
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.runtimeconfig.json
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.pdb
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+D:\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.AssemblyReference.cache
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.GeneratedMSBuildEditorConfig.editorconfig
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfoInputs.cache
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfo.cs
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CoreCompileInputs.cache
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cs
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cache
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.build.json
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.development.json
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.Admin-Portal-API.Microsoft.AspNetCore.StaticWebAssets.props
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.build.Admin-Portal-API.props
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Admin-Portal-API.props
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Admin-Portal-API.props
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.pack.json
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\scopedcss\bundle\Admin-Portal-API.styles.css
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CopyComplete
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.dll
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\refint\Admin-Portal-API.dll
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.pdb
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.genruntimeconfig.cache
+D:\AdminPortal\AdminPortal\obj\Debug\net8.0\ref\Admin-Portal-API.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.exe
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.deps.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.runtimeconfig.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfo.cs
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.Admin-Portal-API.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.build.Admin-Portal-API.props
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Admin-Portal-API.props
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Admin-Portal-API.props
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\scopedcss\bundle\Admin-Portal-API.styles.css
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CopyComplete
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\refint\Admin-Portal-API.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.genruntimeconfig.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\ref\Admin-Portal-API.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\appsettings.Development.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\appsettings.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.exe
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.deps.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.runtimeconfig.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.pdb
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.AssemblyReference.cache
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfoInputs.cache
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfo.cs
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CoreCompileInputs.cache
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cs
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cache
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets.build.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets.development.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.Admin-Portal-API.Microsoft.AspNetCore.StaticWebAssets.props
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.build.Admin-Portal-API.props
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Admin-Portal-API.props
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Admin-Portal-API.props
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\staticwebassets.pack.json
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\scopedcss\bundle\Admin-Portal-API.styles.css
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CopyComplete
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\refint\Admin-Portal-API.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.pdb
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.genruntimeconfig.cache
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\obj\Debug\net8.0\ref\Admin-Portal-API.dll
+E:\New folder\admin_portal-main\admin_portal-main\AdminPortal\bin\Debug\net8.0\Resources\DBJson.json
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.Development.json
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\appsettings.json
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Resources\DBJson.json
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.exe
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.deps.json
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.runtimeconfig.json
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin-Portal-API.pdb
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Microsoft.OpenApi.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+E:\AdminPortal\AdminPortal\AdminPortal\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.AssemblyReference.cache
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.GeneratedMSBuildEditorConfig.editorconfig
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfoInputs.cache
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.AssemblyInfo.cs
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CoreCompileInputs.cache
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cs
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.MvcApplicationPartsAssemblyInfo.cache
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.build.json
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.development.json
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.Admin-Portal-API.Microsoft.AspNetCore.StaticWebAssets.props
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.build.Admin-Portal-API.props
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Admin-Portal-API.props
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Admin-Portal-API.props
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\staticwebassets.pack.json
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\scopedcss\bundle\Admin-Portal-API.styles.css
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.csproj.CopyComplete
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.dll
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\refint\Admin-Portal-API.dll
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.pdb
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\Admin-Portal-API.genruntimeconfig.cache
+E:\AdminPortal\AdminPortal\AdminPortal\obj\Debug\net8.0\ref\Admin-Portal-API.dll

@@ -1,0 +1,90 @@
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.deps.json
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.AssemblyReference.cache
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfoInputs.cache
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfo.cs
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CoreCompileInputs.cache
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CopyComplete
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\refint\Admin.Portal.API.Infrastructure.dll
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+D:\Project\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\ref\Admin.Portal.API.Infrastructure.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.deps.json
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.AssemblyReference.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfoInputs.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfo.cs
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CoreCompileInputs.cache
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CopyComplete
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\refint\Admin.Portal.API.Infrastructure.dll
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+G:\My Drive\Sample Codes\Admin Portal - Sample API\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\ref\Admin.Portal.API.Infrastructure.dll
+D:\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.deps.json
+D:\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+D:\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+D:\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+D:\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.AssemblyReference.cache
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfoInputs.cache
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfo.cs
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CoreCompileInputs.cache
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CopyComplete
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\refint\Admin.Portal.API.Infrastructure.dll
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+D:\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\ref\Admin.Portal.API.Infrastructure.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.deps.json
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfo.cs
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CopyComplete
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\refint\Admin.Portal.API.Infrastructure.dll
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+C:\Users\Admin\Downloads\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\ref\Admin.Portal.API.Infrastructure.dll
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.deps.json
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.AssemblyReference.cache
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfoInputs.cache
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfo.cs
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CoreCompileInputs.cache
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CopyComplete
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\refint\Admin.Portal.API.Infrastructure.dll
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\ref\Admin.Portal.API.Infrastructure.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.deps.json
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.AssemblyReference.cache
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfoInputs.cache
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.AssemblyInfo.cs
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CoreCompileInputs.cache
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.csproj.CopyComplete
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\refint\Admin.Portal.API.Infrastructure.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\Admin.Portal.API.Infrastructure.pdb
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Infrastructure\obj\Debug\net8.0\ref\Admin.Portal.API.Infrastructure.dll
