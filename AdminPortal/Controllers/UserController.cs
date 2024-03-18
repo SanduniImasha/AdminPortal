@@ -1,13 +1,15 @@
 ﻿using Admin.Portal.API.Core.Const;
 using Admin.Portal.API.Core.Models;
 using Admin.Portal.API.Core.Models.Base;
-using Admin.Portal.API.Core.Request;
+using Admin.Portal.API.Core.Response;
 using Admin.Portal.API.Filters;
-using Admin.Portal.API.Infrastructure.Interfaces;
-using Admin.Portal.API.Infrastructure.Services;
-using Microsoft.AspNetCore.Http;
+using Admin.Portal.API.Helpers;
+using Admin.Portal.API.Interfaces;
+using Admin.Portal.API.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System.Net;
 
 namespace Admin.Portal.API.Controllers
@@ -17,45 +19,33 @@ namespace Admin.Portal.API.Controllers
     public class UserController : ControllerBase
     {
         private readonly Settings config;
-        public UserController(IOptions<Settings> _Settings)
+        private readonly DataContext dbContext;
+        public UserController(IOptions<Settings> _Settings, DataContext _dbContext)
         {
             config = _Settings.Value;
+            dbContext = _dbContext;
         }
 
         [HttpGet, Route("Users")]
         public async Task<IActionResult> Users(string? tenantID)
         {
-            IDataAccess db = ServiceInit.GetDataInstance(config);
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, List<UserModel>) result = await db.GetUserDeatils(tenantID);
             if (result.Item1)
-                return new Context(result.Item2).ToContextResult();
+                return new Context(JsonConvert.DeserializeObject<List<UserResponse>>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-
-            //Debug
-            //List<UserModel> lstUsers =
-            //[
-            //    new UserModel { ID = "1", FirstName = "Adam", LastName = "Y", Email = "Adam@gmail.com", Tenenats = ["1"] },
-            //    new UserModel { ID = "2", FirstName = "Adrian", LastName = "Y", Email = "Adrian@gmail.com", Tenenats = ["1", "2"] },
-
-            //    new UserModel { ID = "3", FirstName = "Alan", LastName = "Y", Email = "Alan@gmail.com", Tenenats = ["3"] },
-            //];
-
-            //return new Context(lstUsers).ToContextResult();
         }
 
         [HttpPost, Route("Create")]
         public async Task<IActionResult> Create([FromBody] UserModel context)
         {
-            IDataAccess db = ServiceInit.GetDataInstance(config);
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, UserModel) result = await db.CreateUser(context);
             if (result.Item1)
-                return new Context(result.Item2).ToContextResult();
+                return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-
-            //Debug
-            //return new Context(context).ToContextResult();
         }
     }
 }

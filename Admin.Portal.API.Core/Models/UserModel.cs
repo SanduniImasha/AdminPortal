@@ -4,7 +4,9 @@ namespace Admin.Portal.API.Core.Models
 {
     public class UserModel
     {
-        public string ID { get; set; }
+        public int ID { get; set; }
+        [Required]
+        public string Password { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -12,7 +14,6 @@ namespace Admin.Portal.API.Core.Models
         [Required]
         [EmailAddress]
         public string Email { get; set; }
-        [Required]
-        public List<string> Tenenats { get; set; }
+        public List<string> Tenants { get; set; }
     }
 }

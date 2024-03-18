@@ -60,6 +60,7 @@ E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.A
 E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.AssemblyInfoInputs.cache
 E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.AssemblyInfo.cs
 E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.csproj.CoreCompileInputs.cache
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.sourcelink.json
 E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.dll
 E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\refint\Admin.Portal.API.Core.dll
 E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.pdb

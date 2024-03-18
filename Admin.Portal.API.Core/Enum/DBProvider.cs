@@ -3,6 +3,6 @@
     public enum DBProvider
     {
         TextFile,
-        SQLLite
+        SQLite
     }
 }

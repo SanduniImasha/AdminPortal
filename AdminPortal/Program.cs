@@ -1,4 +1,6 @@
 using Admin.Portal.API.Core.Models.Base;
+using Admin.Portal.API.Helpers;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<Settings>(builder.Configuration.GetSection("Settings"));
+builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetValue<string>("Settings:DataAccess:ConnectionString")));
 
 var app = builder.Build();
 
