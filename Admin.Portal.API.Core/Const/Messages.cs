@@ -6,7 +6,7 @@
 
         public const string ACCOUNT_LOGIN_FAILER = "Incorect Username or Password! Please try again.";
 
-        public const string EMAIL_SENT_SUCCESS = "Successfully sent an email to your account";
+        public const string USER_DELETE_SUCCESS = "User Deleted Successfully";
 
     }
 }

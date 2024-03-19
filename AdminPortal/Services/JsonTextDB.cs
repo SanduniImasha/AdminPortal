@@ -8,7 +8,7 @@ using Admin.Portal.API.Core.Request;
 
 namespace Admin.Portal.API.Services
 {
-    public class JsonTextDB : IDataAccess
+    public class JsonTextDB 
     {
         private protected DB Config { get; set; }
         public JsonTextDB(DB config)
@@ -53,7 +53,7 @@ namespace Admin.Portal.API.Services
                 }
             }
 
-            return (false, new ProfileModel());
+            return (false, new UserModel());
         }
 
         public async Task<(bool, List<TenantModel>)> GetTenantDeatils()

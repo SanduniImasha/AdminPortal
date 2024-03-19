@@ -1,9 +1,13 @@
-﻿using Admin.Portal.API.Core.Models;
+﻿using Admin.Portal.API.Core.Const;
+using Admin.Portal.API.Core.Models;
+using Admin.Portal.API.Core.Models.Base;
 using Admin.Portal.API.Core.Request;
+using Admin.Portal.API.Core.Response;
 using Admin.Portal.API.Filters;
 using Admin.Portal.API.Helpers;
 using Admin.Portal.API.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 
 namespace Admin.Portal.API.Services
@@ -18,17 +22,25 @@ namespace Admin.Portal.API.Services
 
         public async Task<bool> Validate(LoginRequest context)
         {
-            throw new NotImplementedException();
+            if (dbContext.Users.Where(u => u.Email.ToString().Equals(context.Username, StringComparison.InvariantCultureIgnoreCase) && u.Password.ToString().Equals(context.Password)).Count() == 1)
+                return true;
+            else
+                return false;
         }
 
         public async Task<(bool, UserModel)> GetLoginUserDetails(string username)
         {
-            throw new NotImplementedException();
+            UserModel user = dbContext.Users.Where(u => u.Email.ToString().Equals(username, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+
+            if (user != null && user.Email.Length > 0)
+                return (true, dbContext.Users.Where(u => u.Email.ToString().Equals(username, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault());
+            else
+                return (false, null);
         }
 
         public async Task<(bool, List<TenantModel>)> GetTenantDeatils()
         {
-            throw new NotImplementedException();
+            return (true, await dbContext.Tenants.ToListAsync());
         }
 
         public async Task<(bool, List<UserModel>)> GetUserDeatils(string? tenantID)
@@ -51,6 +63,27 @@ namespace Admin.Portal.API.Services
             dbContext.Users.Add(context);
             await dbContext.SaveChangesAsync();
             return (true, dbContext.Users.Where(u => u.Email == context.Email).FirstOrDefault());
+        }
+
+        public async Task<(bool, UserModel)> UpdateUser(UserModel context)
+        {
+            dbContext.Users.Update(context);
+            await dbContext.SaveChangesAsync();
+            return (true, dbContext.Users.Where(u => u.ID == context.ID).FirstOrDefault());
+        }
+
+        public async Task<bool> DeleteUser(int id)
+        {
+            dbContext.Users.Where(u => u.ID == id).ExecuteDelete();
+            await dbContext.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<(bool, TenantModel)> UpdateTenant(TenantModel context)
+        {
+            dbContext.Tenants.Update(context);
+            await dbContext.SaveChangesAsync();
+            return (true, dbContext.Tenants.Where(u => u.ID == context.ID).FirstOrDefault());
         }
     }
 }

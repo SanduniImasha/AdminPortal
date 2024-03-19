@@ -9,6 +9,7 @@ using Admin.Portal.API.Interfaces;
 using Admin.Portal.API.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
 using System.Net;
 
 namespace Admin.Portal.API.Controllers
@@ -28,18 +29,15 @@ namespace Admin.Portal.API.Controllers
         [HttpPost, Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest context)
         {
-            IDataAccess db = ServiceInit.GetDataInstance(config);
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             if (db.Validate(context).Result)
             {
                 (bool, UserModel) result = await db.GetLoginUserDetails(context.Username);
                 if (result.Item1)
-                    return new Context(result.Item2).ToContextResult();
-                else
-                    return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+                    return new Context(JsonConvert.DeserializeObject<List<UserResponse>>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             }
-            else
-                return new Context(Messages.ACCOUNT_LOGIN_FAILER).ToContextResult((int)HttpStatusCode.Forbidden);
+            
+            return new Context(Messages.ACCOUNT_LOGIN_FAILER).ToContextResult((int)HttpStatusCode.Forbidden);
         }
-
     }
 }
