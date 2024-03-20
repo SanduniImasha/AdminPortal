@@ -22,30 +22,40 @@ namespace Admin.Portal.API.Services
 
         public async Task<bool> Validate(LoginRequest context)
         {
-            if (dbContext.Users.Where(u => u.Email.ToString().Equals(context.Username, StringComparison.InvariantCultureIgnoreCase) && u.Password.ToString().Equals(context.Password)).Count() == 1)
+            if (dbContext.Users.Where(u => u.Email.ToString().ToLower() == context.Username.ToLower() && u.Password.ToString() == context.Password).Count() == 1)
                 return true;
             else
                 return false;
         }
 
-        public async Task<(bool, UserModel)> GetLoginUserDetails(string username)
+        public async Task<(bool, UserModel)> GetUserDetails(string username)
         {
-            UserModel user = dbContext.Users.Where(u => u.Email.ToString().Equals(username, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault();
+            UserModel user =  dbContext.Users.Where(u => u.Email.ToLower() == username.ToLower()).FirstOrDefault();
 
             if (user != null && user.Email.Length > 0)
-                return (true, dbContext.Users.Where(u => u.Email.ToString().Equals(username, StringComparison.InvariantCultureIgnoreCase)).FirstOrDefault());
+                return (true, dbContext.Users.Where(u => u.Email.ToLower() == username.ToLower()).FirstOrDefault());
             else
                 return (false, null);
         }
 
-        public async Task<(bool, List<TenantModel>)> GetTenantDeatils()
+        public async Task<(bool, List<TenantModel>)> GetTenantDeatils(int? userID)
         {
-            return (true, await dbContext.Tenants.ToListAsync());
+            if (userID != null)
+            {
+                List<int> lstTM = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault().Tenants;
+                return (true, dbContext.Tenants.Where(t => lstTM.Contains(t.ID)).ToListAsync().Result);
+
+                // UserModel usr = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault();
+
+                // usr.Tenants
+            }
+            else
+                return (true, await dbContext.Tenants.ToListAsync());
         }
 
-        public async Task<(bool, List<UserModel>)> GetUserDeatils(string? tenantID)
+        public async Task<(bool, List<UserModel>)> GetUsers(int? tenantID)
         {
-            if(!String.IsNullOrEmpty(tenantID))
+            if(tenantID != null)
                 return (true, dbContext.Users.Where(u => u.Tenants.Any(t => t.Equals(tenantID))).ToListAsync().Result);
             else
                 return (true, dbContext.Users.ToListAsync().Result);
@@ -72,6 +82,25 @@ namespace Admin.Portal.API.Services
             return (true, dbContext.Users.Where(u => u.ID == context.ID).FirstOrDefault());
         }
 
+        public async Task<(bool, UserModel)> LinkTenantToUser(UserTenantLinkRequest context)
+        {
+            UserModel user = dbContext.Users.Where(u => u.ID == context.UserID).FirstOrDefault();
+            user.Tenants.Add(context.TenantID);
+
+            dbContext.Users.Update(user);
+            await dbContext.SaveChangesAsync();
+            return (true, dbContext.Users.Where(u => u.ID == context.UserID).FirstOrDefault());
+        }
+
+        public async Task<(bool, UserModel)> UnLinkTenantFromUser(UserTenantLinkRequest context)
+        {
+            UserModel user = dbContext.Users.Where(u => u.ID == context.UserID).FirstOrDefault();
+            user.Tenants.Remove(context.TenantID);
+            dbContext.Users.Update(user);
+            await dbContext.SaveChangesAsync();
+            return (true, dbContext.Users.Where(u => u.ID == context.UserID).FirstOrDefault());
+        }
+
         public async Task<bool> DeleteUser(int id)
         {
             dbContext.Users.Where(u => u.ID == id).ExecuteDelete();
@@ -84,6 +113,13 @@ namespace Admin.Portal.API.Services
             dbContext.Tenants.Update(context);
             await dbContext.SaveChangesAsync();
             return (true, dbContext.Tenants.Where(u => u.ID == context.ID).FirstOrDefault());
+        }
+
+        public async Task<bool> DeleteTenant(int id)
+        {
+            dbContext.Tenants.Where(t => t.ID == id).ExecuteDelete();
+            await dbContext.SaveChangesAsync();
+            return true;
         }
     }
 }

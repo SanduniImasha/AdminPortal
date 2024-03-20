@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Admin.Portal.API.Core.Models
+
+namespace Admin.Portal.API.Core.Request
 {
-    public class UserModel
+    public class UserCreateRequest
     {
-        [Required]
-        public int ID { get; set; }
         [Required]
         public string FirstName { get; set; }
         [Required]
@@ -15,8 +14,6 @@ namespace Admin.Portal.API.Core.Models
         public string Email { get; set; }
         [Required]
         public string Password { get; set; }
-        [Required]
-        public List<string> Roles { get; set; } = new(); // Admin or User
         public List<int> Tenants { get; set; }
     }
 }

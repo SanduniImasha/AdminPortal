@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Admin.Portal.API.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240318043015_Initial")]
+    [Migration("20240320003758_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -21,8 +21,9 @@ namespace Admin.Portal.API.Migrations
 
             modelBuilder.Entity("Admin.Portal.API.Core.Models.TenantModel", b =>
                 {
-                    b.Property<string>("ID")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -35,8 +36,9 @@ namespace Admin.Portal.API.Migrations
 
             modelBuilder.Entity("Admin.Portal.API.Core.Models.UserModel", b =>
                 {
-                    b.Property<string>("ID")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -51,6 +53,10 @@ namespace Admin.Portal.API.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Roles")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

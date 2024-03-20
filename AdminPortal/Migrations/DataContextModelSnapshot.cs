@@ -18,8 +18,9 @@ namespace Admin.Portal.API.Migrations
 
             modelBuilder.Entity("Admin.Portal.API.Core.Models.TenantModel", b =>
                 {
-                    b.Property<string>("ID")
-                        .HasColumnType("TEXT");
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -49,6 +50,10 @@ namespace Admin.Portal.API.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Roles")
                         .IsRequired()
                         .HasColumnType("TEXT");
 

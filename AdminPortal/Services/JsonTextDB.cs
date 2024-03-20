@@ -111,7 +111,6 @@ namespace Admin.Portal.API.Services
                 if (obj.Count > 0)
                 {
                     JsonDBStructure db = obj.ToObject<JsonDBStructure>();
-                    context.ID = "T" + Guid.NewGuid().ToString().Replace("-", "");
                     db.Tenetants.Add(context);
                     File.WriteAllText(Config.File, JsonConvert.SerializeObject(db));
                 }

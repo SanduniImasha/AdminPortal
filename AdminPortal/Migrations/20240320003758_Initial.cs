@@ -14,7 +14,8 @@ namespace Admin.Portal.API.Migrations
                 name: "Tenants",
                 columns: table => new
                 {
-                    ID = table.Column<string>(type: "TEXT", nullable: false),
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
@@ -26,11 +27,13 @@ namespace Admin.Portal.API.Migrations
                 name: "Users",
                 columns: table => new
                 {
-                    ID = table.Column<string>(type: "TEXT", nullable: false),
-                    Password = table.Column<string>(type: "TEXT", nullable: false),
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(type: "TEXT", nullable: false),
                     LastName = table.Column<string>(type: "TEXT", nullable: false),
                     Email = table.Column<string>(type: "TEXT", nullable: false),
+                    Password = table.Column<string>(type: "TEXT", nullable: false),
+                    Roles = table.Column<string>(type: "TEXT", nullable: false),
                     Tenants = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>

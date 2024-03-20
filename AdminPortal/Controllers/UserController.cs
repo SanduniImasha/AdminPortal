@@ -1,6 +1,8 @@
 ﻿using Admin.Portal.API.Core.Const;
+using Admin.Portal.API.Core.Enum;
 using Admin.Portal.API.Core.Models;
 using Admin.Portal.API.Core.Models.Base;
+using Admin.Portal.API.Core.Request;
 using Admin.Portal.API.Core.Response;
 using Admin.Portal.API.Filters;
 using Admin.Portal.API.Helpers;
@@ -25,22 +27,22 @@ namespace Admin.Portal.API.Controllers
             dbContext = _dbContext;
         }
 
-       /* [HttpGet, Route("User")]
-        public async Task<IActionResult> Users(string? userID)
+        [HttpGet, Route("User")]
+        public async Task<IActionResult> User(string username)
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, List<UserModel>) result = await db.GetUserDeatils(tenantID);
+            (bool, UserModel) result = await db.GetUserDetails(username);
             if (result.Item1)
-                return new Context(JsonConvert.DeserializeObject<List<UserResponse>>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+                return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-        }*/
+        }
 
         [HttpGet, Route("Users")] 
-        public async Task<IActionResult> Users(string? tenantID)
+        public async Task<IActionResult> Users(int? tenantID)
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, List<UserModel>) result = await db.GetUserDeatils(tenantID);
+            (bool, List<UserModel>) result = await db.GetUsers(tenantID);
             if (result.Item1)
                 return new Context(JsonConvert.DeserializeObject<List<UserResponse>>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
@@ -48,10 +50,12 @@ namespace Admin.Portal.API.Controllers
         }
 
         [HttpPost, Route("Create")]
-        public async Task<IActionResult> Create([FromBody] UserModel context)
+        public async Task<IActionResult> Create([FromBody] UserCreateRequest context)
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, UserModel) result = await db.CreateUser(context);
+            UserModel usr = JsonConvert.DeserializeObject<UserModel>(JsonConvert.SerializeObject(context));
+            usr.Roles.Add(Roles.User.ToString()); // Temporary assign every user as User Role Until proper implemntion of Roles and Claims
+            (bool, UserModel) result = await db.CreateUser(usr);
             if (result.Item1)
                 return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
@@ -59,14 +63,35 @@ namespace Admin.Portal.API.Controllers
         }
 
         [HttpPut,Route("Update")]
-
-        public async Task<IActionResult> Update([FromBody] UserResponse context)
+        public async Task<IActionResult> Update([FromBody] UserModel context)
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, UserModel) result = await db.UpdateUser(JsonConvert.DeserializeObject<UserModel>(JsonConvert.SerializeObject(context)));
+            (bool, UserModel) result = await db.UpdateUser(context);
             if (result.Item1) 
                 return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else 
+                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+        }
+
+        [HttpPut, Route("LinkTenant")]
+        public async Task<IActionResult> LinkTenant([FromBody] UserTenantLinkRequest context)
+        {
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            (bool, UserModel) result = await db.LinkTenantToUser(context);
+            if (result.Item1)
+                return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+            else
+                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+        }
+
+        [HttpPut, Route("UnLinkTenant")]
+        public async Task<IActionResult> UnLinkTenant([FromBody] UserTenantLinkRequest context)
+        {
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            (bool, UserModel) result = await db.UnLinkTenantFromUser(context);
+            if (result.Item1)
+                return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+            else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }
 
@@ -76,12 +101,9 @@ namespace Admin.Portal.API.Controllers
             IDataAccess db = ServiceInit.GetDataInstance(config,dbContext);
             bool result = await db.DeleteUser(id);
             if(result)
-                return new Context(Messages.USER_DELETE_SUCCESS).ToContextResult((int)HttpStatusCode.BadRequest);
+                return new Context(Messages.USER_DELETE_SUCCESS).ToContextResult();
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }
-
-
-
     }
 }

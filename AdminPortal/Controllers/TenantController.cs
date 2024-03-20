@@ -27,10 +27,10 @@ namespace Admin.Portal.API.Controllers
         }
 
         [HttpGet, Route("Tenants")]
-        public async Task<IActionResult> Tenants()
+        public async Task<IActionResult> Tenants(int? userID)
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, List<TenantModel>) result = await db.GetTenantDeatils();
+            (bool, List<TenantModel>) result = await db.GetTenantDeatils(userID);
             if (result.Item1)
                 return new Context(JsonConvert.DeserializeObject<List<TenantModel>>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
@@ -56,6 +56,17 @@ namespace Admin.Portal.API.Controllers
             (bool, TenantModel) result = await db.UpdateTenant(JsonConvert.DeserializeObject<TenantModel>(JsonConvert.SerializeObject(context)));
             if (result.Item1)
                 return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+            else
+                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+        }
+
+        [HttpDelete, Route("Delete")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            bool result = await db.DeleteTenant(id);
+            if (result)
+                return new Context(Messages.USER_DELETE_SUCCESS).ToContextResult();
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }

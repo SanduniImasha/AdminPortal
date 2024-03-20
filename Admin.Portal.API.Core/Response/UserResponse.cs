@@ -12,6 +12,7 @@ namespace Admin.Portal.API.Core.Response
         public string LastName { get; set; }
         [Required]
         public string Email { get; set; }
-        public List<string> Tenants { get; set; }
+        public List<string> Roles { get; set; }
+        public List<int> Tenants { get; set; }
     }
 }

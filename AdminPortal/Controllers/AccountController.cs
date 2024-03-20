@@ -32,9 +32,9 @@ namespace Admin.Portal.API.Controllers
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             if (db.Validate(context).Result)
             {
-                (bool, UserModel) result = await db.GetLoginUserDetails(context.Username);
+                (bool, UserModel) result = await db.GetUserDetails(context.Username);
                 if (result.Item1)
-                    return new Context(JsonConvert.DeserializeObject<List<UserResponse>>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+                    return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             }
             
             return new Context(Messages.ACCOUNT_LOGIN_FAILER).ToContextResult((int)HttpStatusCode.Forbidden);
