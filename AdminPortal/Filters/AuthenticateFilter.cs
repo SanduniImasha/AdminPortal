@@ -17,25 +17,20 @@ namespace Admin.Portal.API.Filters
             config = _Settings;
             dbContext = _dbContext;
         }
-        public bool Authenticate(AccessLevel level, string claim, string userID)
+        public bool Authenticate(AccessLevel level, string claim, string userID, int tenantID = 0)
         {
             if (Convert.ToInt32(userID) == config.SuperUser.ID)
                 return true;
-            else if(level == AccessLevel.Claims)
-            {
-                IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-                return db.GetUserClaims(Convert.ToInt32(userID)).Result.Where(r => r == claim).ToList().Count() > 0;
-            }
-            else if(level == AccessLevel.Admins)
-            {
-                IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-                UserType userType = db.GetUserType(Convert.ToInt32(userID)).Result;
-                if(userType == UserType.AdminUser)
-                    return true;
-                return db.GetUserClaims(Convert.ToInt32(userID)).Result.Where(r => r == claim).ToList().Count() > 0;
-            }
 
-            return false;
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            UserType userType = db.GetUserType(Convert.ToInt32(userID)).Result;
+            if (userType == UserType.AdminUser)
+                return true;
+
+            else if (level == AccessLevel.Claims)
+                return db.GetUserClaims(Convert.ToInt32(userID)).Result.Where(r => r.Claim.Name == claim).ToList().Count() > 0;
+            else
+                return db.GetUserClaims(Convert.ToInt32(userID)).Result.Where(r => r.TenantID == tenantID && r.Claim.Name == claim).ToList().Count() > 0;
         }
     }
 }

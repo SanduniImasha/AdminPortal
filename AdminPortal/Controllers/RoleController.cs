@@ -1,4 +1,5 @@
 ﻿using Admin.Portal.API.Core.Const;
+using Admin.Portal.API.Core.Enum;
 using Admin.Portal.API.Core.Models;
 using Admin.Portal.API.Core.Models.Base;
 using Admin.Portal.API.Core.Request;
@@ -12,6 +13,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using System;
 using System.Net;
 
 namespace Admin.Portal.API.Controllers
@@ -32,6 +34,9 @@ namespace Admin.Portal.API.Controllers
         [HttpGet, Route("Roles")]
         public async Task<IActionResult> Roles(int? tenantId)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, List<RoleModel>) result = await db.GetRoles(tenantId);
             if (result.Item1)
@@ -43,6 +48,9 @@ namespace Admin.Portal.API.Controllers
         [HttpPost, Route("Create")]
         public async Task<IActionResult> Create([FromBody] RoleRequest context)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_CREATE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), context.TenantID))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             RoleModel newRole = JsonConvert.DeserializeObject<RoleModel>(JsonConvert.SerializeObject(context));
             (bool, RoleModel) result = await db.CreateRole(newRole);
@@ -55,6 +63,9 @@ namespace Admin.Portal.API.Controllers
         [HttpPut, Route("Update")]
         public async Task<IActionResult> Update([FromBody] RoleModel context)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_UPDATE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), context.TenantID))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, RoleModel) result = await db.UpdateRole(JsonConvert.DeserializeObject<RoleModel>(JsonConvert.SerializeObject(context)));
             if (result.Item1)
@@ -66,6 +77,10 @@ namespace Admin.Portal.API.Controllers
         [HttpDelete,Route("Delete")]
         public async Task<IActionResult> Delete(int? Id)
         {
+            // ToDo: Get Tenant ID
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             bool result = await db.DeleteRole(Id);
             if(result)
@@ -73,36 +88,6 @@ namespace Admin.Portal.API.Controllers
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
 
-        }
-
-        [HttpPut, Route("LinkClaim")]
-        public async Task<IActionResult> LinkClaim([FromBody] RoleClaimLinkRequest context)
-        {
-            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, RoleModel) result = await db.LinkClaimToRole(context);
-            if (result.Item1)
-                return new Context((result.Item2)).ToContextResult();
-            else
-                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-        }
-
-        [HttpPut, Route("UnLinkClaim")]
-        public async Task<IActionResult> UnLinkClaim([FromBody] RoleClaimLinkRequest context)
-        {
-            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, RoleModel) result = await db.UnLinkClaimFromRole(context);
-            if (result.Item1)
-                return new Context((result.Item2)).ToContextResult();
-            else
-                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-        }
-
-        [HttpGet, Route("Claims")]
-        public async Task<IActionResult> GetAllClaims()
-        {
-            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            List<ClaimModel> result = await db.GetClaims();
-            return new Context(JsonConvert.DeserializeObject<List<ClaimResponse>>(JsonConvert.SerializeObject(result))).ToContextResult();
         }
     }
 

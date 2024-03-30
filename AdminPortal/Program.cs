@@ -1,4 +1,5 @@
 using Admin.Portal.API.Core.Models.Base;
+using Admin.Portal.API.Extentions;
 using Admin.Portal.API.Helpers;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,5 +28,9 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseEnableRequestRewindMiddleware();
+
+app.UseExceptionMiddleware();
 
 app.Run();

@@ -27,10 +27,12 @@ namespace Admin.Portal.API.Controllers
             dbContext = _dbContext;
         }
 
+        //ToDo: Tenant --> ID Request
+
         [HttpGet, Route("Tenants")]
         public async Task<IActionResult> Tenants(int? userID)
         {
-            if(!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if(!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
@@ -44,7 +46,7 @@ namespace Admin.Portal.API.Controllers
         [HttpPost, Route("Create")]
         public async Task<IActionResult> Create([FromBody] TenantRequest context)
         {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_CREATE_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_CREATE_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
@@ -58,7 +60,7 @@ namespace Admin.Portal.API.Controllers
         [HttpPut, Route("Update")]
         public async Task<IActionResult> Update([FromBody] TenantModel context)
         {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_UPDATE_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_UPDATE_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), context.ID))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
@@ -72,7 +74,7 @@ namespace Admin.Portal.API.Controllers
         [HttpDelete, Route("Delete")]
         public async Task<IActionResult> Delete(int id)
         {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
@@ -83,33 +85,33 @@ namespace Admin.Portal.API.Controllers
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }
 
-        [HttpPut, Route("LinkRole")]
-        public async Task<IActionResult> LiknRole([FromBody] TenantRoleRequest context) 
-        {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
-                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+        //[HttpPut, Route("LinkRole")]
+        //public async Task<IActionResult> LiknRole([FromBody] TenantRoleRequest context) 
+        //{
+        //    if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+        //        return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
-            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, TenantModel) result = await db.LinkRoleToTenant(context);
-            if (result.Item1)
-                return new Context((result.Item2)).ToContextResult();
-            else
-                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-        }
+        //    IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+        //    (bool, TenantModel) result = await db.LinkRoleToTenant(context);
+        //    if (result.Item1)
+        //        return new Context((result.Item2)).ToContextResult();
+        //    else
+        //        return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+        //}
 
-        [HttpPut, Route("UnlinkRole")]
-        public async Task<IActionResult> UnLiknRole([FromBody] TenantRoleRequest context)
-        {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
-                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+        //[HttpPut, Route("UnlinkRole")]
+        //public async Task<IActionResult> UnLiknRole([FromBody] TenantRoleRequest context)
+        //{
+        //    if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+        //        return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
-            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, TenantModel) result = await db.UnLinkRoleFromTenant(context);
-            if (result.Item1)
-                return new Context((result.Item2)).ToContextResult();
-            else
-                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-        }
+        //    IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+        //    (bool, TenantModel) result = await db.UnLinkRoleFromTenant(context);
+        //    if (result.Item1)
+        //        return new Context((result.Item2)).ToContextResult();
+        //    else
+        //        return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+        //}
       
     }
 }

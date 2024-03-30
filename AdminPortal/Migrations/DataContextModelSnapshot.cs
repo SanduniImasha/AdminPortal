@@ -37,7 +37,7 @@ namespace Admin.Portal.API.Migrations
 
             modelBuilder.Entity("Admin.Portal.API.Core.Models.RoleModel", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -49,7 +49,10 @@ namespace Admin.Portal.API.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.Property<int>("TenantID")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ID");
 
                     b.ToTable("Roles");
                 });
@@ -62,9 +65,6 @@ namespace Admin.Portal.API.Migrations
 
                     b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Roles")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");

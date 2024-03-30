@@ -23,11 +23,6 @@
     <ProjectReference Include="..\Admin.Portal.API.Core\Admin.Portal.API.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Extentions\" />
-    <Folder Include="Handlers\" />
-  </ItemGroup>
-
   <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>

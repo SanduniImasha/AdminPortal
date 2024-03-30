@@ -3,6 +3,6 @@
     public enum AccessLevel
     {
         Claims,
-        Admins
+        TenantnClaims
     }
 }

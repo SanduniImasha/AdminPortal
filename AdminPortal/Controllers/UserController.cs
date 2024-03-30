@@ -30,6 +30,9 @@ namespace Admin.Portal.API.Controllers
         [HttpGet, Route("User")]
         public async Task<IActionResult> User(string username)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, UserModel) result = await db.GetUserDetails(username);
             if (result.Item1)
@@ -41,7 +44,7 @@ namespace Admin.Portal.API.Controllers
         [HttpGet, Route("Users")] 
         public async Task<IActionResult> Users(int? tenantID)
         {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
@@ -55,6 +58,9 @@ namespace Admin.Portal.API.Controllers
         [HttpPost, Route("Create")]
         public async Task<IActionResult> Create([FromBody] UserCreateRequest context)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_CREATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             UserModel usr = JsonConvert.DeserializeObject<UserModel>(JsonConvert.SerializeObject(context));
             (bool, UserModel) result = await db.CreateUser(usr);
@@ -67,6 +73,9 @@ namespace Admin.Portal.API.Controllers
         [HttpPut,Route("Update")]
         public async Task<IActionResult> Update([FromBody] UserModel context)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, UserModel) result = await db.UpdateUser(context);
             if (result.Item1) 
@@ -78,6 +87,9 @@ namespace Admin.Portal.API.Controllers
         [HttpPut, Route("LinkTenant")]
         public async Task<IActionResult> LinkTenant([FromBody] UserTenantLinkRequest context)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, UserModel) result = await db.LinkTenantToUser(context);
             if (result.Item1)
@@ -89,6 +101,9 @@ namespace Admin.Portal.API.Controllers
         [HttpPut, Route("UnLinkTenant")]
         public async Task<IActionResult> UnLinkTenant([FromBody] UserTenantLinkRequest context)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, UserModel) result = await db.UnLinkTenantFromUser(context);
             if (result.Item1)
@@ -100,6 +115,9 @@ namespace Admin.Portal.API.Controllers
         [HttpDelete,Route("Delete")]
         public async Task<IActionResult> Delete(int id)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_DELETE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config,dbContext);
             bool result = await db.DeleteUser(id);
             if(result)

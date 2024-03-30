@@ -12,7 +12,7 @@
         public const string TENANT_DELETE_SUCCESS = "Tenant Deleted Successfully";
 
 
-
+        public const string ERROR_TENANT_EXSIST = "Tenant name alreday exsist";
 
     }
 }

@@ -30,8 +30,8 @@ namespace Admin.Portal.API.Controllers
         [HttpPost, Route("Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequest context)
         {
-            //if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_ALLOW_TO_LOGIN, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
-            // return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_ALLOW_TO_LOGIN, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             if (context.Username.ToLower().Equals(config.SuperUser.Email.ToLower()) && context.Password.Equals(config.SuperUser.Password))
                 return new Context(new UserResponse() { FirstName = config.SuperUser.FirstName, LastName = config.SuperUser.LastName, ID = config.SuperUser.ID, Email = config.SuperUser.Email }).ToContextResult();
