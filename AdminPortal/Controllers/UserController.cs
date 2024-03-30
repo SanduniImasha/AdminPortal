@@ -41,6 +41,9 @@ namespace Admin.Portal.API.Controllers
         [HttpGet, Route("Users")] 
         public async Task<IActionResult> Users(int? tenantID)
         {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, List<UserModel>) result = await db.GetUsers(tenantID);
             if (result.Item1)
@@ -54,7 +57,6 @@ namespace Admin.Portal.API.Controllers
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             UserModel usr = JsonConvert.DeserializeObject<UserModel>(JsonConvert.SerializeObject(context));
-            usr.Roles.Add(Roles.User.ToString()); // Temporary assign every user as User Role Until proper implemntion of Roles and Claims
             (bool, UserModel) result = await db.CreateUser(usr);
             if (result.Item1)
                 return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();

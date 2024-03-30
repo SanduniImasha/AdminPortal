@@ -1,4 +1,5 @@
-﻿using Admin.Portal.API.Core.Models;
+﻿using Admin.Portal.API.Core.Enum;
+using Admin.Portal.API.Core.Models;
 using Admin.Portal.API.Core.Request;
 using Admin.Portal.API.Core.Response;
 
@@ -18,6 +19,16 @@ namespace Admin.Portal.API.Interfaces
         public Task<(bool, UserModel)> LinkTenantToUser(UserTenantLinkRequest context);
         public Task<(bool, UserModel)> UnLinkTenantFromUser(UserTenantLinkRequest context);
         public Task<bool> DeleteUser(int id);
-        
+        public Task<(bool, List<RoleModel>)> GetRoles(int? tenantID);
+        public Task<(bool, RoleModel)> CreateRole(RoleModel context);
+        public Task<(bool, RoleModel)> UpdateRole(RoleModel context);
+        public Task<bool> DeleteRole(int? Id);
+        public Task<(bool, RoleModel)> LinkClaimToRole(RoleClaimLinkRequest context);
+        public Task<(bool, RoleModel)> UnLinkClaimFromRole(RoleClaimLinkRequest context);
+        public Task<(bool, TenantModel)> LinkRoleToTenant(TenantRoleRequest context);
+        public Task<(bool, TenantModel)> UnLinkRoleFromTenant(TenantRoleRequest context);
+        public Task<List<string>> GetUserClaims(int userID);
+        public Task<List<ClaimModel>> GetClaims();
+        public Task<UserType> GetUserType(int userID);
     }
 }

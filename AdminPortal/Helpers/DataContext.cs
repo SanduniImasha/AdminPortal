@@ -12,5 +12,7 @@ namespace Admin.Portal.API.Helpers
 
         public DbSet<UserModel> Users => Set<UserModel>();
         public DbSet<TenantModel> Tenants => Set<TenantModel>();
+        public DbSet<RoleModel> Roles => Set<RoleModel>();
+        public DbSet<ClaimModel> Claims => Set<ClaimModel>();
     }
 }

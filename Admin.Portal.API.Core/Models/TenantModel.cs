@@ -8,5 +8,7 @@ namespace Admin.Portal.API.Core.Models
         public int ID { get; set; }
         [Required]
         public string Name { get; set; }
+        public List<int>? Roles { get; set; } = new();
     }
 }
+ 
