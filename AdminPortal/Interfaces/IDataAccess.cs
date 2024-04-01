@@ -10,8 +10,7 @@ namespace Admin.Portal.API.Interfaces
         public Task<bool> Validate(LoginRequest context);
         public Task<(bool, UserModel)> GetUserDetails(string username);
         public Task<(bool, List<TenantModel>)> GetTenantDeatils(int? userID);
-        public Task<(bool, TenantModel)> GetOneTenant(int? tenantID);
-        
+        public Task<(bool, TenantModel)> GetOneTenant(int tenantID);
         public Task<(bool, TenantModel)> CreateTenant(TenantModel context);
         public Task<(bool, TenantModel)> UpdateTenant(TenantModel context);
         public Task<bool> DeleteTenant(int id);

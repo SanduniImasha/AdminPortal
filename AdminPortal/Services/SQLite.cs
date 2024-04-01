@@ -155,7 +155,7 @@ namespace Admin.Portal.API.Services
 
         public async Task<(bool, RoleModel)> CreateRole(RoleModel context)
         {
-            if (dbContext.Roles.Where(u => u.Name == context.Name).ToList().Count > 0)
+            if (dbContext.Roles.Where(u => u.Name == context.Name && u.TenantID == context.TenantID).ToList().Count > 0)
                 return (false, null);
 
             dbContext.Roles.Add(context);
@@ -259,7 +259,7 @@ namespace Admin.Portal.API.Services
             return user.Type;
         }
 
-        public async Task<(bool, TenantModel)> GetOneTenant(int? tenantID)
+        public async Task<(bool, TenantModel)> GetOneTenant(int tenantID)
         {
             if (tenantID != null)
             {

@@ -75,14 +75,14 @@ namespace Admin.Portal.API.Controllers
         }
 
         [HttpDelete,Route("Delete")]
-        public async Task<IActionResult> Delete(int? Id)
+        public async Task<IActionResult> Delete(int ID)
         {
-       
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), db.GetOneTenant(ID).Result.Item2.ID))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
-            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            bool result = await db.DeleteRole(Id);
+            bool result = await db.DeleteRole(ID);
             if(result)
                 return new Context(Messages.ROLE_DELETE_SUCCESS).ToContextResult();
             else
@@ -90,7 +90,5 @@ namespace Admin.Portal.API.Controllers
 
         }
     }
-
-
 }
 
