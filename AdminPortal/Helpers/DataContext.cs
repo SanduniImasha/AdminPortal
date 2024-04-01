@@ -1,5 +1,6 @@
 ﻿using Admin.Portal.API.Core.Models;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Admin.Portal.API.Helpers
 {
@@ -7,6 +8,7 @@ namespace Admin.Portal.API.Helpers
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options)
         {
+            
         }
 
 

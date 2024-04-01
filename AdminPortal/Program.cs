@@ -2,6 +2,7 @@ using Admin.Portal.API.Core.Models.Base;
 using Admin.Portal.API.Extentions;
 using Admin.Portal.API.Helpers;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,8 +13,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.Configure<Settings>(builder.Configuration.GetSection("Settings"));
-builder.Services.AddDbContext<DataContext>(options => options.UseSqlite(builder.Configuration.GetValue<string>("Settings:DataAccess:ConnectionString")));
-
+builder.Services.AddDbContext<DataContext>(options =>
+{ 
+options.UseSqlite(builder.Configuration.GetValue<string>("Settings:DataAccess:ConnectionString"));
+ options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

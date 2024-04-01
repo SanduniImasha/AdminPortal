@@ -32,7 +32,7 @@ namespace Admin.Portal.API.Controllers
         }
 
         [HttpGet, Route("Roles")]
-        public async Task<IActionResult> Roles(int? tenantId)
+        public async Task<IActionResult> Roles(int tenantId)
         {
             if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
@@ -77,7 +77,7 @@ namespace Admin.Portal.API.Controllers
         [HttpDelete,Route("Delete")]
         public async Task<IActionResult> Delete(int? Id)
         {
-            // ToDo: Get Tenant ID
+       
             if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 

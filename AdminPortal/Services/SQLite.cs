@@ -75,7 +75,7 @@ namespace Admin.Portal.API.Services
 
         public async Task<(bool, UserModel)> UpdateUser(UserModel context)
         {
-            if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count > 1)
+           if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count > 1)
                 return (false, null);
 
             dbContext.Users.Update(context);
@@ -121,8 +121,8 @@ namespace Admin.Portal.API.Services
 
         public async Task<(bool, TenantModel)> UpdateTenant(TenantModel context)
         {
-            if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count == 0)
-                return (false, null);
+          if (dbContext.Tenants.Where(u => u.ID == context.ID).ToList().Count == 0)
+              return (false, null);
 
             dbContext.Tenants.Update(context);
             await dbContext.SaveChangesAsync();
@@ -146,7 +146,8 @@ namespace Admin.Portal.API.Services
 
         public async Task<(bool, List<RoleModel>)> GetRoles(int? tenantID)
         {
-            if (tenantID != null)            
+            if (tenantID != null)     
+                
                 return (true, dbContext.Roles.Where(u => u.TenantID == tenantID).ToList());
             else
                 return (true, await dbContext.Roles.ToListAsync());
@@ -154,7 +155,7 @@ namespace Admin.Portal.API.Services
 
         public async Task<(bool, RoleModel)> CreateRole(RoleModel context)
         {
-            if (dbContext.Roles.Where(u => u.Name == context.Name && u.TenantID == context.TenantID).ToList().Count > 0)
+            if (dbContext.Roles.Where(u => u.Name == context.Name).ToList().Count > 0)
                 return (false, null);
 
             dbContext.Roles.Add(context);
@@ -239,7 +240,7 @@ namespace Admin.Portal.API.Services
         public async Task<List<RoleClaimModel>> GetUserClaims(int userID)
         {
             List<int> tenants = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault().Tenants;
-            List<RoleModel> roles = dbContext.Roles.Where(r => tenants.Contains(r.TenantID)).ToList();
+           List<RoleModel> roles = dbContext.Roles.Where(r => tenants.Contains(r.TenantID)).ToList();
 
             List<RoleClaimModel> claims = [];
             foreach (RoleModel role in roles)
@@ -256,6 +257,17 @@ namespace Admin.Portal.API.Services
         {
             UserModel user = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault();
             return user.Type;
+        }
+
+        public async Task<(bool, TenantModel)> GetOneTenant(int? tenantID)
+        {
+            if (tenantID != null)
+            {
+               // TenantModel t = dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault();
+                return (true, dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault());
+            }
+            else
+                return (false,null); ;
         }
     }
 }

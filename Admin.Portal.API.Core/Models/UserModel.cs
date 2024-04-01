@@ -18,6 +18,6 @@ namespace Admin.Portal.API.Core.Models
         public string Password { get; set; }
         public List<int> Tenants { get; set; }
 
-        public UserType Type { get; set; }
+        public UserType Type { get; set; } = UserType.NormalUser;
     }
 }

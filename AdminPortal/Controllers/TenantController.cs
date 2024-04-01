@@ -42,6 +42,19 @@ namespace Admin.Portal.API.Controllers
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }
+        [HttpGet, Route("Tenant")]
+        public async Task<IActionResult> GetTenant(int tenantId)
+        {
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            (bool, TenantModel) result = await db.GetOneTenant(tenantId);
+            if (result.Item1)
+                return new Context(JsonConvert.DeserializeObject<TenantModel>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+            else
+                return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+        }
 
         [HttpPost, Route("Create")]
         public async Task<IActionResult> Create([FromBody] TenantRequest context)
@@ -66,7 +79,7 @@ namespace Admin.Portal.API.Controllers
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             (bool, TenantModel) result = await db.UpdateTenant(JsonConvert.DeserializeObject<TenantModel>(JsonConvert.SerializeObject(context)));
             if (result.Item1)
-                return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+                return new Context(JsonConvert.DeserializeObject<TenantModel>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }
