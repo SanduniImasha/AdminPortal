@@ -8,6 +8,7 @@
         public const string CLAIM_CREATE_USER = "create-user";
         public const string CLAIM_UPDATE_USER = "update-user";
         public const string CLAIM_DELETE_USER = "delete-user";        
+        public const string CLAIM_LINK_TENANT = "link-tenant";        
 
         public const string CLAIM_READ_TENANT = "read-tenant";
         public const string CLAIM_CREATE_TENANT = "create-tenant";

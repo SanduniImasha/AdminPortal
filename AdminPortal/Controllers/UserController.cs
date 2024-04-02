@@ -87,7 +87,7 @@ namespace Admin.Portal.API.Controllers
         [HttpPut, Route("LinkTenant")]
         public async Task<IActionResult> LinkTenant([FromBody] UserTenantLinkRequest context)
         {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_LINK_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), context.TenantID))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
@@ -101,7 +101,7 @@ namespace Admin.Portal.API.Controllers
         [HttpPut, Route("UnLinkTenant")]
         public async Task<IActionResult> UnLinkTenant([FromBody] UserTenantLinkRequest context)
         {
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString(),context.TenantID))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
