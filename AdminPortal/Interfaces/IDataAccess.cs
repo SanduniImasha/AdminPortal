@@ -21,6 +21,7 @@ namespace Admin.Portal.API.Interfaces
         public Task<(bool, UserModel)> UnLinkTenantFromUser(UserTenantLinkRequest context);
         public Task<bool> DeleteUser(int id);
         public Task<(bool, List<RoleModel>)> GetRoles(int? tenantID);
+        public Task<(bool, RoleModel)> GetRole(int roleID);
         public Task<(bool, RoleModel)> CreateRole(RoleModel context);
         public Task<(bool, RoleModel)> UpdateRole(RoleModel context);
         public Task<bool> DeleteRole(int? Id);

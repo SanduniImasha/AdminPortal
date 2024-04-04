@@ -13,6 +13,8 @@
 
 
         public const string ERROR_TENANT_EXSIST = "Tenant name alreday exsist";
+        public const string ERROR_USER_EXSIST = "User alreday exsist";
+        public const string ERROR_USER_DOES_NOT_EXSIST = "User does not exsist";
 
     }
 }

@@ -98,19 +98,19 @@ namespace Admin.Portal.API.Controllers
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }
 
-        //[HttpPut, Route("LinkRole")]
-        //public async Task<IActionResult> LiknRole([FromBody] TenantRoleRequest context) 
-        //{
-        //    if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Admins, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
-        //        return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+     // [HttpPut, Route("LinkRole")]
+     //   public async Task<IActionResult> LiknRole([FromBody] TenantRoleRequest context) 
+     //   {
+     //     //  if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_TENANT, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+     //       //    return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
-        //    IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-        //    (bool, TenantModel) result = await db.LinkRoleToTenant(context);
-        //    if (result.Item1)
-        //        return new Context((result.Item2)).ToContextResult();
-        //    else
-        //        return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
-        //}
+     //       //IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+     //       //(bool, TenantModel) result = await db.LinkRoleToTenant(context);
+     //      if (result.Item1)
+     //          return new Context((result.Item2)).ToContextResult();
+     //       else
+     //           return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
+     //   }
 
         //[HttpPut, Route("UnlinkRole")]
         //public async Task<IActionResult> UnLiknRole([FromBody] TenantRoleRequest context)

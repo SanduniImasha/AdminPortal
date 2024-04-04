@@ -34,17 +34,6 @@ namespace Admin.Portal.API.Services
                 return (false, null);
         }
 
-        public async Task<(bool, List<TenantModel>)> GetTenantDeatils(int? userID)
-        {
-            if (userID != null)
-            {
-                List<int> lstTM = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault().Tenants;
-                return (true, dbContext.Tenants.Where(t => lstTM.Contains(t.ID)).ToListAsync().Result);
-            }
-            else
-                return (true, await dbContext.Tenants.ToListAsync());
-        }
-
         public async Task<(bool, List<UserModel>)> GetUsers(int? tenantID)
         {
             if(tenantID != null)
@@ -53,20 +42,12 @@ namespace Admin.Portal.API.Services
                 return (true, dbContext.Users.ToListAsync().Result);
         }
 
-        public async Task<(bool, TenantModel)> CreateTenant(TenantModel context)
-        {
-            if (dbContext.Tenants.Where(t => t.Name.ToLower() == context.Name.ToLower()).ToList().Count > 1)
-                throw new Exception(Messages.ERROR_TENANT_EXSIST);
-
-            dbContext.Tenants.Add(context);
-            await dbContext.SaveChangesAsync(); 
-            return (true, context);
-        }
+      
 
         public async Task<(bool, UserModel)> CreateUser(UserModel context)
         {
             if (dbContext.Users.Where(u => u.Email.ToLower() == context.Email.ToLower()).ToList().Count > 1)
-                return (false, null);
+                throw new Exception(Messages.ERROR_USER_EXSIST);
 
             dbContext.Users.Add(context);
             await dbContext.SaveChangesAsync();
@@ -76,7 +57,7 @@ namespace Admin.Portal.API.Services
         public async Task<(bool, UserModel)> UpdateUser(UserModel context)
         {
            if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count > 1)
-                return (false, null);
+                throw new Exception(Messages.ERROR_USER_DOES_NOT_EXSIST);
 
             dbContext.Users.Update(context);
             await dbContext.SaveChangesAsync();
@@ -118,7 +99,36 @@ namespace Admin.Portal.API.Services
             await dbContext.SaveChangesAsync();
             return true;
         }
+        public async Task<(bool, List<TenantModel>)> GetTenantDeatils(int? userID)
+        {
+            if (userID != null)
+            {
+                List<int> lstTM = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault().Tenants;
+                return (true, dbContext.Tenants.Where(t => lstTM.Contains(t.ID)).ToListAsync().Result);
+            }
+            else
+                return (true, await dbContext.Tenants.ToListAsync());
+        }
 
+        public async Task<(bool, TenantModel)> GetOneTenant(int tenantID)
+        {
+            if (tenantID != null)
+            {
+                // TenantModel t = dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault();
+                return (true, dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault());
+            }
+            else
+                return (false, null); 
+        }
+        public async Task<(bool, TenantModel)> CreateTenant(TenantModel context)
+        {
+            if (dbContext.Tenants.Where(t => t.Name.ToLower() == context.Name.ToLower()).ToList().Count > 1)
+                throw new Exception(Messages.ERROR_TENANT_EXSIST);
+
+            dbContext.Tenants.Add(context);
+            await dbContext.SaveChangesAsync();
+            return (true, context);
+        }
         public async Task<(bool, TenantModel)> UpdateTenant(TenantModel context)
         {
           if (dbContext.Tenants.Where(u => u.ID == context.ID).ToList().Count == 0)
@@ -151,6 +161,17 @@ namespace Admin.Portal.API.Services
                 return (true, dbContext.Roles.Where(u => u.TenantID == tenantID).ToList());
             else
                 return (true, await dbContext.Roles.ToListAsync());
+        }
+
+        public async Task<(bool, RoleModel)> GetRole(int roleID)
+        {
+            if (roleID != null)
+            {
+                // TenantModel t = dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault();
+                return (true, dbContext.Roles.Where(r => r.ID == roleID).FirstOrDefault());
+            }
+            else
+                return (false,null);
         }
 
         public async Task<(bool, RoleModel)> CreateRole(RoleModel context)
@@ -212,19 +233,19 @@ namespace Admin.Portal.API.Services
             return (true, role);
         }
 
-        //public async Task<(bool, TenantModel)> LinkRoleToTenant(TenantRoleRequest context)
-        //{
-        //    TenantModel tenant = dbContext.Tenants.Where(t=>t.ID == context.TenantId).FirstOrDefault();
-        //    if (tenant.Roles == null) tenant.Roles = new();
-        //    foreach(int role in context.RoleIds)
-        //    {
-        //        tenant.Roles.Add(role);
-        //    }
-        //    dbContext.Tenants.Update(tenant);
-        //    await dbContext.SaveChangesAsync();
-        //    return (true, tenant);
-        //}
-
+     /*   public async Task<(bool, TenantModel)> LinkRoleToTenant(TenantRoleRequest context)
+       {
+        //   TenantModel tenant = dbContext.Tenants.Where(t=>t.ID == context.TenantId).FirstOrDefault();
+          // if (tenant.Roles == null) tenant.Roles = new();
+           foreach(int role in context.RoleIds)
+           {
+               tenant.Roles.Add(role);
+           }
+                 dbContext.Tenants.Update(tenant);
+                 await dbContext.SaveChangesAsync();
+                 return (true, tenant);
+        }
+     */
         //public async Task<(bool, TenantModel)> UnLinkRoleFromTenant(TenantRoleRequest context)
         //{
         //    TenantModel tenant = dbContext.Tenants.Where(t => t.ID == context.TenantId).FirstOrDefault();
@@ -259,15 +280,8 @@ namespace Admin.Portal.API.Services
             return user.Type;
         }
 
-        public async Task<(bool, TenantModel)> GetOneTenant(int tenantID)
-        {
-            if (tenantID != null)
-            {
-               // TenantModel t = dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault();
-                return (true, dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault());
-            }
-            else
-                return (false,null); ;
-        }
+       
+
+       
     }
 }
