@@ -32,5 +32,9 @@ namespace Admin.Portal.API.Interfaces
         public Task<List<RoleClaimModel>> GetUserClaims(int userID);
         public Task<List<ClaimModel>> GetClaims();
         public Task<UserType> GetUserType(int userID);
+        public Task<(bool success, InvitationModel result)> SaveInvitation(InvitationModel context);
+        public Task<UserModel> GetUserByEmail(string email);
+        public Task<UserModel> GetUserById(int userId);
+        public Task<(bool, InvitationModel)> GetInvitationById(int invitationId);
     }
 }

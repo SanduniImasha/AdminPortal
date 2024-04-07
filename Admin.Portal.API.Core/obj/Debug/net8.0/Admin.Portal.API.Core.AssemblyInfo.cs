@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Admin.Portal.API.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1fe95f39407fcc8dec8bc9b6e4631f6d68a45bc7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a74536852b6b5727af392c272f214a61c3f59a1a")]
 [assembly: System.Reflection.AssemblyProductAttribute("Admin.Portal.API.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Admin.Portal.API.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

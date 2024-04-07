@@ -167,7 +167,6 @@ namespace Admin.Portal.API.Services
         {
             if (roleID != null)
             {
-                // TenantModel t = dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault();
                 return (true, dbContext.Roles.Where(r => r.ID == roleID).FirstOrDefault());
             }
             else
@@ -261,7 +260,7 @@ namespace Admin.Portal.API.Services
         public async Task<List<RoleClaimModel>> GetUserClaims(int userID)
         {
             List<int> tenants = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault().Tenants;
-           List<RoleModel> roles = dbContext.Roles.Where(r => tenants.Contains(r.TenantID)).ToList();
+            List<RoleModel> roles = dbContext.Roles.Where(r => tenants.Contains(r.TenantID)).ToList();
 
             List<RoleClaimModel> claims = [];
             foreach (RoleModel role in roles)
@@ -279,9 +278,56 @@ namespace Admin.Portal.API.Services
             UserModel user = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault();
             return user.Type;
         }
+        public async Task<UserModel> GetUserByEmail(string email)
+        {
 
-       
+            return await dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
 
-       
+
+        }
+        public async Task<UserModel> GetUserById(int userId)
+        {
+            return await dbContext.Users.FirstOrDefaultAsync(u => u.ID == userId);
+        }
+        public async Task<(bool, InvitationModel)> SaveInvitation(InvitationModel context)
+        {
+            try
+            {
+                dbContext.Invitations.Add(context);
+                await dbContext.SaveChangesAsync();
+
+
+                UserModel receiverUser = await dbContext.Users.FirstOrDefaultAsync(u => u.ID == context.ReceiverID);
+                if (receiverUser != null)
+                {
+                    receiverUser.Invitations.Add(context.ID);
+                    await dbContext.SaveChangesAsync();
+                }
+
+                return (true, context);
+            }
+            catch (Exception ex)
+            {
+
+                return (false, null);
+            }
+        }
+        public async Task<(bool, InvitationModel)> GetInvitationById(int invitationId)
+        {
+            try
+            {
+                var invitation = await dbContext.Invitations.FirstOrDefaultAsync(i => i.ID == invitationId);
+                return (invitation != null, invitation);
+            }
+            catch (Exception ex)
+            {
+
+                return (false, null);
+            }
+        }
+
+
+
+
     }
 }

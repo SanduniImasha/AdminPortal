@@ -35,6 +35,26 @@ namespace Admin.Portal.API.Migrations
                     b.ToTable("Claims");
                 });
 
+            modelBuilder.Entity("Admin.Portal.API.Core.Models.InvitationModel", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ReceiverID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("SenderID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("TenantId")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Invitations");
+                });
+
             modelBuilder.Entity("Admin.Portal.API.Core.Models.RoleModel", b =>
                 {
                     b.Property<int>("ID")
@@ -83,6 +103,10 @@ namespace Admin.Portal.API.Migrations
                         .HasColumnType("TEXT");
 
                     b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Invitations")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
