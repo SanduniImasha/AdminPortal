@@ -47,4 +47,6 @@ app.UseEnableRequestRewindMiddleware();
 
 app.UseExceptionMiddleware();
 
+app.UseCors("AllowVueApp");
+
 app.Run();
