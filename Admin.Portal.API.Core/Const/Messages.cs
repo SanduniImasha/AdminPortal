@@ -15,6 +15,12 @@
         public const string ERROR_TENANT_EXSIST = "Tenant name alreday exsist";
         public const string ERROR_USER_EXSIST = "User alreday exsist";
         public const string ERROR_USER_DOES_NOT_EXSIST = "User does not exsist";
+        public const string ERROR_USER_TENANT_EXSIST = "User already link to tenant";
+        public const string ERROR_USER_TENANT_DOES_NOT_EXSIST = "User does not link to this tenant";
+        public const string ERROR_TENANT_DOES_NOT_EXSIST = "Tenant does not exsist";
+
+        public const string ERROR_ROLE_EXSIST = "Role already exsist";
+        public const string ERROR_ROLE_DOES_NOT_EXSIST = "Role does not exsist";
 
     }
 }

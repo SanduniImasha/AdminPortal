@@ -31,7 +31,7 @@ namespace Admin.Portal.API.Services
             if (user != null)
                 return (true, dbContext.Users.Where(u => u.Email.ToLower() == username.ToLower()).FirstOrDefault());
             else
-                return (false, null);
+                throw new Exception(Messages.ERROR_USER_DOES_NOT_EXSIST);
         }
 
         public async Task<(bool, List<UserModel>)> GetUsers(int? tenantID)
@@ -41,9 +41,6 @@ namespace Admin.Portal.API.Services
             else
                 return (true, dbContext.Users.ToListAsync().Result);
         }
-
-      
-
         public async Task<(bool, UserModel)> CreateUser(UserModel context)
         {
             if (dbContext.Users.Where(u => u.Email.ToLower() == context.Email.ToLower()).ToList().Count > 1)
@@ -70,7 +67,7 @@ namespace Admin.Portal.API.Services
             user.Tenants.Add(context.TenantID);
 
             if (user.Tenants.Where(u => (int)u == context.TenantID).ToList().Count > 1)
-                return (false, null);
+                throw new Exception(Messages.ERROR_USER_TENANT_EXSIST);
 
             dbContext.Users.Update(user);
             await dbContext.SaveChangesAsync();
@@ -82,7 +79,8 @@ namespace Admin.Portal.API.Services
             UserModel user = dbContext.Users.Where(u => u.ID == context.UserID).FirstOrDefault();
 
             if (user.Tenants.Where(u => (int)u == context.TenantID).ToList().Count == 0)
-                return (false, null);
+                throw new Exception(Messages.ERROR_USER_TENANT_DOES_NOT_EXSIST);
+
 
             user.Tenants.Remove(context.TenantID);
             dbContext.Users.Update(user);
@@ -114,11 +112,10 @@ namespace Admin.Portal.API.Services
         {
             if (tenantID != null)
             {
-                // TenantModel t = dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault();
                 return (true, dbContext.Tenants.Where(u => u.ID == tenantID).FirstOrDefault());
             }
             else
-                return (false, null); 
+                throw new Exception(Messages.ERROR_TENANT_DOES_NOT_EXSIST);
         }
         public async Task<(bool, TenantModel)> CreateTenant(TenantModel context)
         {
@@ -132,7 +129,7 @@ namespace Admin.Portal.API.Services
         public async Task<(bool, TenantModel)> UpdateTenant(TenantModel context)
         {
           if (dbContext.Tenants.Where(u => u.ID == context.ID).ToList().Count == 0)
-              return (false, null);
+                throw new Exception(Messages.ERROR_TENANT_DOES_NOT_EXSIST);
 
             dbContext.Tenants.Update(context);
             await dbContext.SaveChangesAsync();
@@ -176,7 +173,7 @@ namespace Admin.Portal.API.Services
         public async Task<(bool, RoleModel)> CreateRole(RoleModel context)
         {
             if (dbContext.Roles.Where(u => u.Name == context.Name && u.TenantID == context.TenantID).ToList().Count > 0)
-                return (false, null);
+                throw new Exception(Messages.ERROR_ROLE_EXSIST);
 
             dbContext.Roles.Add(context);
             await dbContext.SaveChangesAsync();
@@ -186,7 +183,7 @@ namespace Admin.Portal.API.Services
         public async Task<(bool, RoleModel)> UpdateRole(RoleModel context)
         {
             if (dbContext.Roles.Where(u => u.ID == context.ID).ToList().Count == 0)
-                return (false, null);
+                throw new Exception(Messages.ERROR_ROLE_DOES_NOT_EXSIST);
 
             dbContext.Roles.Update(context);
             await dbContext.SaveChangesAsync();
@@ -231,32 +228,6 @@ namespace Admin.Portal.API.Services
             await dbContext.SaveChangesAsync();
             return (true, role);
         }
-
-     /*   public async Task<(bool, TenantModel)> LinkRoleToTenant(TenantRoleRequest context)
-       {
-        //   TenantModel tenant = dbContext.Tenants.Where(t=>t.ID == context.TenantId).FirstOrDefault();
-          // if (tenant.Roles == null) tenant.Roles = new();
-           foreach(int role in context.RoleIds)
-           {
-               tenant.Roles.Add(role);
-           }
-                 dbContext.Tenants.Update(tenant);
-                 await dbContext.SaveChangesAsync();
-                 return (true, tenant);
-        }
-     */
-        //public async Task<(bool, TenantModel)> UnLinkRoleFromTenant(TenantRoleRequest context)
-        //{
-        //    TenantModel tenant = dbContext.Tenants.Where(t => t.ID == context.TenantId).FirstOrDefault();
-        //    foreach (int role in context.RoleIds)
-        //    {
-        //        tenant.Roles.Remove(role);
-        //    }
-        //    dbContext.Tenants.Remove(tenant);
-        //    await dbContext.SaveChangesAsync();
-        //    return (true, tenant);
-        //}
-
         public async Task<List<RoleClaimModel>> GetUserClaims(int userID)
         {
             List<int> tenants = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault().Tenants;
@@ -273,6 +244,7 @@ namespace Admin.Portal.API.Services
         {
             return (dbContext.Claims.ToListAsync().Result);
         }
+      
         public async Task<UserType> GetUserType(int userID)
         {
             UserModel user = dbContext.Users.Where(u => u.ID == userID).FirstOrDefault();
@@ -280,10 +252,7 @@ namespace Admin.Portal.API.Services
         }
         public async Task<UserModel> GetUserByEmail(string email)
         {
-
             return await dbContext.Users.FirstOrDefaultAsync(u => u.Email == email);
-
-
         }
         public async Task<UserModel> GetUserById(int userId)
         {
@@ -291,11 +260,8 @@ namespace Admin.Portal.API.Services
         }
         public async Task<(bool, InvitationModel)> SaveInvitation(InvitationModel context)
         {
-            try
-            {
                 dbContext.Invitations.Add(context);
                 await dbContext.SaveChangesAsync();
-
 
                 UserModel receiverUser = await dbContext.Users.FirstOrDefaultAsync(u => u.ID == context.ReceiverID);
                 if (receiverUser != null)
@@ -303,31 +269,13 @@ namespace Admin.Portal.API.Services
                     receiverUser.Invitations.Add(context.ID);
                     await dbContext.SaveChangesAsync();
                 }
-
                 return (true, context);
-            }
-            catch (Exception ex)
-            {
-
-                return (false, null);
-            }
+     
         }
         public async Task<(bool, InvitationModel)> GetInvitationById(int invitationId)
         {
-            try
-            {
-                var invitation = await dbContext.Invitations.FirstOrDefaultAsync(i => i.ID == invitationId);
-                return (invitation != null, invitation);
-            }
-            catch (Exception ex)
-            {
-
-                return (false, null);
-            }
+            var invitation = await dbContext.Invitations.FirstOrDefaultAsync(i => i.ID == invitationId);
+            return (invitation != null, invitation);
         }
-
-
-
-
     }
 }

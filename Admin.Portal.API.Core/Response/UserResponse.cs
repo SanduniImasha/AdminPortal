@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Admin.Portal.API.Core.Enum;
+using System.ComponentModel.DataAnnotations;
 
 namespace Admin.Portal.API.Core.Response
 {
@@ -13,5 +14,6 @@ namespace Admin.Portal.API.Core.Response
         [Required]
         public string Email { get; set; }
         public List<int> Tenants { get; set; }
+        public UserType Type { get; set; }
     }
 }

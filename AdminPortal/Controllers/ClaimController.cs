@@ -38,6 +38,16 @@ namespace Admin.Portal.API.Controllers
             List<ClaimModel> result = await db.GetClaims();
             return new Context(JsonConvert.DeserializeObject<List<ClaimResponse>>(JsonConvert.SerializeObject(result))).ToContextResult();
         }
+        [HttpGet, Route("Claim")]
+        public async Task<IActionResult> Claim(int userID)
+        {
+             if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_READ_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
+                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
+
+            IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
+            List<RoleClaimModel> result = await db.GetUserClaims(userID);
+            return new Context(result).ToContextResult();
+        }
 
         [HttpPut, Route("LinkClaim")]
         public async Task<IActionResult> LinkClaim([FromBody] RoleClaimLinkRequest context)
