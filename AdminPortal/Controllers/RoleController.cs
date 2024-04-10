@@ -94,7 +94,7 @@ namespace Admin.Portal.API.Controllers
         {
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
             
-            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), db.GetOneTenant(ID).Result.Item2.ID))
+            if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.TenantnClaims, Claims.CLAIM_DELETE_ROLE, Request.Headers[Config.HEADER_LOGIN_USER].ToString(), db.GetRole(ID).Result.Item2.TenantID))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             bool result = await db.DeleteRole(ID);

@@ -21,6 +21,8 @@
 
         public const string ERROR_ROLE_EXSIST = "Role already exsist";
         public const string ERROR_ROLE_DOES_NOT_EXSIST = "Role does not exsist";
+        public const string ERROR_USERS_ALREADY_LINKED = "Other users are already linked to this tenant, Please try again";
+        public const string ERROR_ROLES_ALREADY_LINKED = "Roles are already linked to this tenant, Please try again";
 
     }
 }

@@ -17,7 +17,7 @@ namespace Admin.Portal.API.Core.Models
         [Required]
         public string Password { get; set; }
         public List<int> Tenants { get; set; }
-        public List<int> Invitations { get; set; }
+        public List<int> Invitations { get; set; } = new List<int>();
         public UserType Type { get; set; } = UserType.NormalUser;
     }
 }

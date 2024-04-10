@@ -140,11 +140,11 @@ namespace Admin.Portal.API.Services
         {
             // User Check
             if (dbContext.Users.Where(u => u.Tenants.Contains(id)).ToList().Count > 0)
-                return (false);
+                throw new Exception(Messages.ERROR_USERS_ALREADY_LINKED); // Users alreday linked please unloink them and try again 
 
             //Role Check
             if (dbContext.Roles.Where(u => u.TenantID == id).ToList().Count > 0)
-                return (false);
+                throw new Exception(Messages.ERROR_ROLES_ALREADY_LINKED);//  Roles alreday linked please delete them and try again 
 
             dbContext.Tenants.Where(t => t.ID == id).ExecuteDelete();
             await dbContext.SaveChangesAsync();

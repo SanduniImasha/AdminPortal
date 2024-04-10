@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj": {}
+    "E:\\AdminPortal\\AdminPortal\\adminportal\\Admin-Portal-API.csproj": {}
   },
   "projects": {
     "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj": {
@@ -59,14 +59,14 @@
         }
       }
     },
-    "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj": {
+    "E:\\AdminPortal\\AdminPortal\\adminportal\\Admin-Portal-API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
+        "projectUniqueName": "E:\\AdminPortal\\AdminPortal\\adminportal\\Admin-Portal-API.csproj",
         "projectName": "Admin-Portal-API",
-        "projectPath": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
+        "projectPath": "E:\\AdminPortal\\AdminPortal\\adminportal\\Admin-Portal-API.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\obj\\",
+        "outputPath": "E:\\AdminPortal\\AdminPortal\\adminportal\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ZJPt9Gfy1Sxga5mjrEmjvlEWWb+xL1yL4fKtnZ8M3g81pXOOwx5ezFFcmVwuRaitRiG0eszuuhCtOAV2Smj2yg==",
+  "dgSpecHash": "xKO725XdIBTClDiF68f5aJr2tVMoc46/kdKe0iav7spamtqVDRD5dXQ7ZErgNW78SpISeOMRuQTrVgvoHmMCvA==",
   "success": true,
-  "projectFilePath": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
+  "projectFilePath": "E:\\AdminPortal\\AdminPortal\\adminportal\\Admin-Portal-API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
