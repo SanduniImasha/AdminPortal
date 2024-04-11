@@ -166,6 +166,45 @@ namespace Admin.Portal.API.Controllers
                 return StatusCode(500, "An error occurred while getting the invitation.");
             }
         }
+        [HttpGet, Route("GetInvitationsForReceiver")]
+        public async Task<IActionResult> GetInvitationsForReceiver(string email)
+        {
+            try
+            {
+                var user = await _dbContext.Users
+                    .FirstOrDefaultAsync(u => u.Email == email);
+
+                if (user == null)
+                {
+                    return NotFound("User not found.");
+                }
+
+                var invitations = await _dbContext.Invitations
+                    .Where(i => i.ReceiverID == user.ID)
+                    .Select(invitation => new
+                    {
+                        ID = invitation.ID,
+                        SenderID = invitation.SenderID,
+                        ReceiverID = invitation.ReceiverID,
+                        TenantID = invitation.TenantId,
+                        SenderFirstName = _dbContext.Users.FirstOrDefault(u => u.ID == invitation.SenderID).FirstName,
+                        SenderLastName = _dbContext.Users.FirstOrDefault(u => u.ID == invitation.SenderID).LastName,
+                        TenantName = _dbContext.Tenants.FirstOrDefault(t => t.ID == invitation.TenantId).Name
+                    })
+                    .ToListAsync();
+
+                if (!invitations.Any())
+                {
+                    return NotFound("No invitations found for the specified user.");
+                }
+
+                return Ok(invitations);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while getting the invitations.");
+            }
+        }
 
     }
 }
