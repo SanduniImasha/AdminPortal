@@ -136,17 +136,33 @@ namespace Admin.Portal.API.Services
             return (true, context);
         }
 
-        public async Task<bool> DeleteTenant(int id)
+        public async Task<bool> DeleteTenant(TenantDeleteRequest context)
         {
-            // User Check
-            if (dbContext.Users.Where(u => u.Tenants.Contains(id)).ToList().Count > 0)
-                throw new Exception(Messages.ERROR_USERS_ALREADY_LINKED); // Users alreday linked please unloink them and try again 
+            if(context.ForceDelete)
+            {
+                List<UserModel> users = dbContext.Users.Where(u => u.Tenants.Contains(context.ID)).ToList();
 
-            //Role Check
-            if (dbContext.Roles.Where(u => u.TenantID == id).ToList().Count > 0)
-                throw new Exception(Messages.ERROR_ROLES_ALREADY_LINKED);//  Roles alreday linked please delete them and try again 
+                foreach (UserModel u in users)
+                {
+                    u.Tenants.Remove(context.ID);
+                    dbContext.Users.Update(u);
+                }
 
-            dbContext.Tenants.Where(t => t.ID == id).ExecuteDelete();
+                dbContext.Roles.Where(u => u.TenantID == context.ID).ExecuteDelete();
+            }
+            else
+            {
+                // User Check
+                if (dbContext.Users.Where(u => u.Tenants.Contains(context.ID)).ToList().Count > 0)
+                    throw new Exception(Messages.ERROR_USERS_ALREADY_LINKED);
+
+                //Role Check
+                if (dbContext.Roles.Where(u => u.TenantID == context.ID).ToList().Count > 0)
+                    throw new Exception(Messages.ERROR_ROLES_ALREADY_LINKED);
+
+            }
+
+            dbContext.Tenants.Where(t => t.ID == context.ID).ExecuteDelete();
             await dbContext.SaveChangesAsync();
             return true;
         }

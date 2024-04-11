@@ -13,7 +13,7 @@ namespace Admin.Portal.API.Interfaces
         public Task<(bool, TenantModel)> GetOneTenant(int tenantID);
         public Task<(bool, TenantModel)> CreateTenant(TenantModel context);
         public Task<(bool, TenantModel)> UpdateTenant(TenantModel context);
-        public Task<bool> DeleteTenant(int id);
+        public Task<bool> DeleteTenant(TenantDeleteRequest context);
         public Task<(bool, List<UserModel>)> GetUsers(int? tenantID);
         public Task<(bool, UserModel)> CreateUser(UserModel context);
         public Task<(bool, UserModel)> UpdateUser(UserModel context);
