@@ -2,9 +2,11 @@
 using Admin.Portal.API.Core.Enum;
 using Admin.Portal.API.Core.Models;
 using Admin.Portal.API.Core.Request;
+using Admin.Portal.API.Filters;
 using Admin.Portal.API.Helpers;
 using Admin.Portal.API.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System.Net;
 
 namespace Admin.Portal.API.Services
 {
@@ -138,7 +140,10 @@ namespace Admin.Portal.API.Services
 
         public async Task<bool> DeleteTenant(TenantDeleteRequest context)
         {
-            if(context.ForceDelete)
+            if(dbContext.Tenants.Where(u => u.ID == context.ID).Count() ==0)
+                throw new Exception(Messages.ERROR_TENANT_DOES_NOT_EXSIST);
+
+            if (context.ForceDelete)
             {
                 List<UserModel> users = dbContext.Users.Where(u => u.Tenants.Contains(context.ID)).ToList();
 
