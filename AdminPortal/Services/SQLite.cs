@@ -45,7 +45,7 @@ namespace Admin.Portal.API.Services
         }
         public async Task<(bool, UserModel)> CreateUser(UserModel context)
         {
-            if (dbContext.Users.Where(u => u.Email.ToLower() == context.Email.ToLower()).ToList().Count > 1)
+            if (dbContext.Users.Where(u => u.Email.ToLower() == context.Email.ToLower()).ToList().Count >= 1)
                 throw new Exception(Messages.ERROR_USER_EXSIST);
 
             dbContext.Users.Add(context);
