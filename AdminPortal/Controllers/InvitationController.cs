@@ -193,16 +193,45 @@ namespace Admin.Portal.API.Controllers
                     })
                     .ToListAsync();
 
-                if (!invitations.Any())
-                {
-                    return NotFound("No invitations found for the specified user.");
-                }
-
                 return Ok(invitations);
             }
             catch (Exception ex)
             {
                 return StatusCode(500, "An error occurred while getting the invitations.");
+            }
+        }
+        [HttpGet, Route("GetSentInvitationsForSender")]
+        public async Task<IActionResult> GetSentInvitationsForSender(string email, int tenantId)
+        {
+            try
+            {
+                var sender = await _dbContext.Users
+                    .FirstOrDefaultAsync(u => u.Email == email);
+
+                if (sender == null)
+                {
+                    return NotFound("Sender not found.");
+                }
+
+                var invitations = await _dbContext.Invitations
+                    .Where(i => i.SenderID == sender.ID && i.TenantId == tenantId)
+                    .Select(invitation => new
+                    {
+                        id = invitation.ID,
+                        senderID = sender.ID,
+                        receiverID = invitation.ReceiverID,
+                        tenantID = invitation.TenantId,
+                        receiverFirstName = _dbContext.Users.FirstOrDefault(u => u.ID == invitation.ReceiverID).FirstName,
+                        receiverLastName = _dbContext.Users.FirstOrDefault(u => u.ID == invitation.ReceiverID).LastName,
+                        tenantName = _dbContext.Tenants.FirstOrDefault(t => t.ID == invitation.TenantId).Name
+                    })
+                    .ToListAsync();
+
+                return Ok(invitations);
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "An error occurred while getting the sent invitations.");
             }
         }
 
