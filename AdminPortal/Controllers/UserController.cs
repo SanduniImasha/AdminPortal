@@ -71,15 +71,15 @@ namespace Admin.Portal.API.Controllers
         }
 
         [HttpPut,Route("Update")]
-        public async Task<IActionResult> Update([FromBody] UserModel context)
+        public async Task<IActionResult> Update([FromBody] UpdateRequest context)
         {
             if (!new AuthenticateFilter(config, dbContext).Authenticate(AccessLevel.Claims, Claims.CLAIM_UPDATE_USER, Request.Headers[Config.HEADER_LOGIN_USER].ToString()))
                 return new Context(Messages.ACCOUNT_INSUFFICIENT_PRIVILEGES).ToContextResult((int)HttpStatusCode.Forbidden);
 
             IDataAccess db = ServiceInit.GetDataInstance(config, dbContext);
-            (bool, UserModel) result = await db.UpdateUser(context);
+            (bool, UpdateRequest) result = await db.UpdateUserPartial(context);
             if (result.Item1) 
-                return new Context(JsonConvert.DeserializeObject<UserResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
+                return new Context(JsonConvert.DeserializeObject<UpdateResponse>(JsonConvert.SerializeObject(result.Item2))).ToContextResult();
             else 
                 return new Context(Messages.DATA_ACCESS_FAILER).ToContextResult((int)HttpStatusCode.BadRequest);
         }

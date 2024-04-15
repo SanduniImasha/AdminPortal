@@ -53,18 +53,6 @@ E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Core\obj\Debu
 E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Core\obj\Debug\net8.0\refint\Admin.Portal.API.Core.dll
 E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.pdb
 E:\New folder\admin_portal-main\admin_portal-main\Admin.Portal.API.Core\obj\Debug\net8.0\ref\Admin.Portal.API.Core.dll
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.GeneratedMSBuildEditorConfig.editorconfig
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.AssemblyInfoInputs.cache
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.AssemblyInfo.cs
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.csproj.CoreCompileInputs.cache
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.sourcelink.json
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.deps.json
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.dll
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.dll
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\refint\Admin.Portal.API.Core.dll
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.pdb
-E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\ref\Admin.Portal.API.Core.dll
 C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.deps.json
 C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.dll
 C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
@@ -77,3 +65,15 @@ C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Por
 C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\refint\Admin.Portal.API.Core.dll
 C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.pdb
 C:\Documents\Intern\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\ref\Admin.Portal.API.Core.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.deps.json
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\bin\Debug\net8.0\Admin.Portal.API.Core.pdb
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.AssemblyInfoInputs.cache
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.AssemblyInfo.cs
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.csproj.CoreCompileInputs.cache
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.sourcelink.json
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\refint\Admin.Portal.API.Core.dll
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\Admin.Portal.API.Core.pdb
+E:\AdminPortal\AdminPortal\Admin.Portal.API.Core\obj\Debug\net8.0\ref\Admin.Portal.API.Core.dll

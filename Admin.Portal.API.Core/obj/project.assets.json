@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\coolg\\.nuget\\packages\\": {}
+    "C:\\Users\\Admin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Documents\\Intern\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
+      "projectUniqueName": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
       "projectName": "Admin.Portal.API.Core",
-      "projectPath": "C:\\Documents\\Intern\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
-      "packagesPath": "C:\\Users\\coolg\\.nuget\\packages\\",
-      "outputPath": "C:\\Documents\\Intern\\AdminPortal\\Admin.Portal.API.Core\\obj\\",
+      "projectPath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\coolg\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -61,7 +61,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.100/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

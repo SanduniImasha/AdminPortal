@@ -17,6 +17,7 @@ namespace Admin.Portal.API.Interfaces
         public Task<(bool, List<UserModel>)> GetUsers(int? tenantID);
         public Task<(bool, UserModel)> CreateUser(UserModel context);
         public Task<(bool, UserModel)> UpdateUser(UserModel context);
+        public Task<(bool, UpdateRequest)> UpdateUserPartial(UpdateRequest context);
         public Task<(bool, UserModel)> LinkTenantToUser(UserTenantLinkRequest context);
         public Task<(bool, UserModel)> UnLinkTenantFromUser(UserTenantLinkRequest context);
         public Task<bool> DeleteUser(int id);
@@ -31,11 +32,11 @@ namespace Admin.Portal.API.Interfaces
         //public Task<(bool, TenantModel)> UnLinkRoleFromTenant(TenantRoleRequest context);
         public Task<List<RoleClaimModel>> GetUserClaims(int userID);
         public Task<List<ClaimModel>> GetClaims();
-        
+
         public Task<UserType> GetUserType(int userID);
         public Task<(bool success, InvitationModel result)> SaveInvitation(InvitationModel context);
         public Task<UserModel> GetUserByEmail(string email);
         public Task<UserModel> GetUserById(int userId);
         public Task<(bool, InvitationModel)> GetInvitationById(int invitationId);
-    }
+    }    
 }

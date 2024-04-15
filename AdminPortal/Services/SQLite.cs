@@ -52,13 +52,24 @@ namespace Admin.Portal.API.Services
             await dbContext.SaveChangesAsync();
             return (true, dbContext.Users.Where(u => u.Email == context.Email).FirstOrDefault());
         }
-
         public async Task<(bool, UserModel)> UpdateUser(UserModel context)
         {
-           if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count > 1)
+            if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count > 1)
                 throw new Exception(Messages.ERROR_USER_DOES_NOT_EXSIST);
 
             dbContext.Users.Update(context);
+            await dbContext.SaveChangesAsync();
+            return (true, context);
+        }
+        public async Task<(bool, UpdateRequest)> UpdateUserPartial(UpdateRequest context)
+        {
+           if (dbContext.Users.Where(u => u.ID == context.ID).ToList().Count > 1)
+                throw new Exception(Messages.ERROR_USER_DOES_NOT_EXSIST);
+            UserModel user = dbContext.Users.Where(u => u.ID == (context.ID)).FirstOrDefault();
+            user.FirstName = context.FirstName;
+            user.LastName = context.LastName;
+            user.Email = context.Email;
+            dbContext.Users.Update(user);
             await dbContext.SaveChangesAsync();
             return (true, context);
         }
