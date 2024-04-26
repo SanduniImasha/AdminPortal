@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "KEsEC55viXeFIEQ5Ykg8BKzExgSi7bz1qw2ExNyTNIo=",
+  "Source": "Admin-Portal-API",
+  "BasePath": "_content/Admin-Portal-API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

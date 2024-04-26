@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
+      "projectUniqueName": "E:\\New\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
       "projectName": "Admin.Portal.API.Core",
-      "projectPath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
+      "projectPath": "E:\\New\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\obj\\",
+      "outputPath": "E:\\New\\AdminPortal\\Admin.Portal.API.Core\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

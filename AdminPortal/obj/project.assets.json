@@ -3026,11 +3026,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
+      "projectUniqueName": "E:\\New\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
       "projectName": "Admin-Portal-API",
-      "projectPath": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
+      "projectPath": "E:\\New\\AdminPortal\\AdminPortal\\Admin-Portal-API.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "E:\\AdminPortal\\AdminPortal\\AdminPortal\\obj\\",
+      "outputPath": "E:\\New\\AdminPortal\\AdminPortal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -3047,8 +3047,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj": {
-              "projectPath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj"
+            "E:\\New\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj": {
+              "projectPath": "E:\\New\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj"
             }
           }
         }

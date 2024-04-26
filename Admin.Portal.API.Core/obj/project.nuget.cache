@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zLvdxFxACmwpGZ+dvcy6YMa+pDd/5oWADyyX837ZR47obrRuLkGx5Yol4LskeNj8ruwTx9WKFXKVjur0FV7WEw==",
+  "dgSpecHash": "gOcys7X/Njr5aJLtQRKEqXxNgltsMNM9al0iL7lsgUbu6TMtQSxhBqRPLgmY2mz2WJwGPRLGhYg4J+qGDuGUdg==",
   "success": true,
-  "projectFilePath": "E:\\AdminPortal\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
+  "projectFilePath": "E:\\New\\AdminPortal\\Admin.Portal.API.Core\\Admin.Portal.API.Core.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

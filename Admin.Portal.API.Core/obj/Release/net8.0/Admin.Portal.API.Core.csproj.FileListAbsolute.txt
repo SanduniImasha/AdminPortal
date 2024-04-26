@@ -1,0 +1,12 @@
+E:\New\AdminPortal\Admin.Portal.API.Core\bin\Release\net8.0\Admin.Portal.API.Core.deps.json
+E:\New\AdminPortal\Admin.Portal.API.Core\bin\Release\net8.0\Admin.Portal.API.Core.dll
+E:\New\AdminPortal\Admin.Portal.API.Core\bin\Release\net8.0\Admin.Portal.API.Core.pdb
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.AssemblyInfoInputs.cache
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.AssemblyInfo.cs
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.csproj.CoreCompileInputs.cache
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.sourcelink.json
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.dll
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\refint\Admin.Portal.API.Core.dll
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\Admin.Portal.API.Core.pdb
+E:\New\AdminPortal\Admin.Portal.API.Core\obj\Release\net8.0\ref\Admin.Portal.API.Core.dll
